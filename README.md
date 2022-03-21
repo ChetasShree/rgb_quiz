@@ -1,16 +1,14 @@
-# rgb_quiz
+# RGB Quiz 🎨
+## Tech Stack used :- flutter 
 
-A new Flutter project.
+## This is a RGB Quiz app where it will show the RBG code of the colour and you have to guess which colour it could be 
+### This is how it looks 💫
+### App icon 👁️
+<img src="https://user-images.githubusercontent.com/75165587/159330327-29f95923-2e27-473b-b2be-84c4bb43a71b.jpeg" width="100">
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+### The App 🤜🔥🤛
+<img src="https://user-images.githubusercontent.com/75165587/159330363-0ffdb7fe-b517-4137-ab63-7613b600e9ba.jpeg" width="600">
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
