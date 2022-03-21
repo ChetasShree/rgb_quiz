@@ -15,26 +15,30 @@ class _HomeState extends State<Home> {
   bool correctAnswerSelected = false;
 
   void _questionAnswered(bool answerScore) {
-    setState(() {
-      answerWasSelected = true;
-      if (answerScore) {
-        _totalScore++;
-        correctAnswerSelected = true;
-      }
-      _scoreTracker.add(
-        answerScore
-            ? Icon(
-                Icons.check_circle,
-                color: Colors.green,
-              )
-            : Icon(
-                Icons.clear,
-                color: Colors.red,
-              ),
+    Future.delayed(Duration.zero, () {
+      setState(
+        () {
+          answerWasSelected = true;
+          if (answerScore) {
+            _totalScore++;
+            correctAnswerSelected = true;
+          }
+          _scoreTracker.add(
+            answerScore
+                ? Icon(
+                    Icons.check_circle,
+                    color: Colors.green,
+                  )
+                : Icon(
+                    Icons.clear,
+                    color: Colors.red,
+                  ),
+          );
+          if (_questionIndex + 1 == _questions.length) {
+            endOfQuiz = true;
+          }
+        },
       );
-      if (_questionIndex + 1 == _questions.length) {
-        endOfQuiz = true;
-      }
     });
   }
 
@@ -44,6 +48,7 @@ class _HomeState extends State<Home> {
       answerWasSelected = false;
       correctAnswerSelected = false;
     });
+    // what happens at the end of the quiz
     if (_questionIndex >= _questions.length) {
       _resetQuiz();
     }
@@ -188,77 +193,75 @@ class _HomeState extends State<Home> {
 
 final _questions = const [
   {
-    'question': 'How long is New Zealand’s Ninety Mile Beach?',
+    'question': 'R 239 , G 27 , B 136',
     'answers': [
-      {'answerText': '88km, so 55 miles long.', 'score': true},
-      {'answerText': '55km, so 34 miles long.', 'score': false},
-      {'answerText': '90km, so 56 miles long.', 'score': false},
+      {'answerText': 'Pink', 'score': true},
+      {'answerText': 'Blue', 'score': false},
+      {'answerText': 'Yellow', 'score': false},
     ],
   },
   {
-    'question':
-        'In which month does the German festival of Oktoberfest mostly take place?',
+    'question': 'R 27 , G 215 , B 239',
     'answers': [
-      {'answerText': 'January', 'score': false},
-      {'answerText': 'October', 'score': false},
-      {'answerText': 'September', 'score': true},
+      {'answerText': 'Light Blue', 'score': true},
+      {'answerText': 'Red', 'score': false},
+      {'answerText': 'Black', 'score': false},
     ],
   },
   {
-    'question': 'Who composed the music for Sonic the Hedgehog 3?',
+    'question': 'R 255 , G 255 , B 0',
     'answers': [
-      {'answerText': 'Britney Spears', 'score': false},
-      {'answerText': 'Timbaland', 'score': false},
-      {'answerText': 'Michael Jackson', 'score': true},
+      {'answerText': 'Yellow', 'score': true},
+      {'answerText': 'Blue', 'score': false},
+      {'answerText': 'Red', 'score': false},
     ],
   },
   {
-    'question': 'In Georgia (the state), it’s illegal to eat what with a fork?',
+    'question': 'R 255 , G 165 , B 0',
     'answers': [
-      {'answerText': 'Hamburgers', 'score': false},
-      {'answerText': 'Fried chicken', 'score': true},
-      {'answerText': 'Pizza', 'score': false},
+      {'answerText': 'orange', 'score': true},
+      {'answerText': 'Blue', 'score': false},
+      {'answerText': 'Yellow', 'score': false},
     ],
   },
   {
-    'question':
-        'Which part of his body did musician Gene Simmons from Kiss insure for one million dollars?',
+    'question': 'R 50 , G 205 , B 50',
     'answers': [
-      {'answerText': 'His tongue', 'score': true},
-      {'answerText': 'His leg', 'score': false},
-      {'answerText': 'His butt', 'score': false},
+      {'answerText': 'lime green', 'score': true},
+      {'answerText': 'Blue', 'score': false},
+      {'answerText': 'Yellow', 'score': false},
     ],
   },
   {
-    'question': 'In which country are Panama hats made?',
+    'question': 'R 0 , G 206 , B 209',
     'answers': [
-      {'answerText': 'Ecuador', 'score': true},
-      {'answerText': 'Panama (duh)', 'score': false},
-      {'answerText': 'Portugal', 'score': false},
+      {'answerText': 'dark turquoise', 'score': true},
+      {'answerText': 'Blue', 'score': false},
+      {'answerText': 'Yellow', 'score': false},
     ],
   },
   {
-    'question': 'From which country do French fries originate?',
+    'question': 'R 186 , G 85 , B 211',
     'answers': [
-      {'answerText': 'Belgium', 'score': true},
-      {'answerText': 'France (duh)', 'score': false},
-      {'answerText': 'Switzerland', 'score': false},
+      {'answerText': 'Red', 'score': false},
+      {'answerText': 'medium orchid', 'score': true},
+      {'answerText': 'Yellow', 'score': false},
     ],
   },
   {
-    'question': 'Which sea creature has three hearts?',
+    'question': 'R 139 , G 69 , B 19',
     'answers': [
-      {'answerText': 'Great White Sharks', 'score': false},
-      {'answerText': 'Killer Whales', 'score': false},
-      {'answerText': 'The Octopus', 'score': true},
+      {'answerText': 'saddle brown', 'score': true},
+      {'answerText': 'Blue', 'score': false},
+      {'answerText': 'Yellow', 'score': false},
     ],
   },
   {
-    'question': 'Which European country eats the most chocolate per capita?',
+    'question': 'R 230 , G 230 , B 250',
     'answers': [
-      {'answerText': 'Belgium', 'score': false},
-      {'answerText': 'The Netherlands', 'score': false},
-      {'answerText': 'Switzerland', 'score': true},
+      {'answerText': 'lavender', 'score': true},
+      {'answerText': 'Blue', 'score': false},
+      {'answerText': 'Yellow', 'score': false},
     ],
   },
 ];
